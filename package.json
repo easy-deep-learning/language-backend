@@ -1,0 +1,22 @@
+{
+  "name": "@easy-deep-learning/language-backend",
+  "version": "1.0.0",
+  "description": "Language learn SPA: backend",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/easy-deep-learning/language-backend.git"
+  },
+  "keywords": [
+    "api"
+  ],
+  "author": "easy.deep.learning@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/easy-deep-learning/language-backend/issues"
+  },
+  "homepage": "https://github.com/easy-deep-learning/language-backend#readme"
+}
