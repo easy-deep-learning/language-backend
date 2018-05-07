@@ -4,6 +4,7 @@
   "description": "Language learn SPA: backend",
   "main": "src/index.js",
   "scripts": {
+    "start": "node ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/easy-deep-learning/language-backend/issues"
   },
-  "homepage": "https://github.com/easy-deep-learning/language-backend#readme"
+  "homepage": "https://github.com/easy-deep-learning/language-backend#readme",
+  "dependencies": {
+    "hapi": "^17.4.0"
+  }
 }
