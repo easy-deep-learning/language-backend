@@ -12,11 +12,12 @@ services:
     image: node:alpine
     volumes:
       - ./:/app
+    working_dir: /app    
     environment:
       PORT: 3000
       IP: 0.0.0.0
       MONGO_HOST: mongodb
-    command: node /app/src/index
+    command: sh -c 'npm i && node ./src/index.js'
 
   mongodb:
     image: mongo
