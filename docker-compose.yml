@@ -1,23 +1,38 @@
 version: '3'
 
+volumes:
+  npm-home: ~
+
 services:
+
+  install-deps:
+    image: node:alpine
+    volumes:
+      - $PWD:/app
+      - npm-home:/tmp
+    working_dir: /app
+    user: $USER_ID
+    command: npm install
+    environment:
+      - HOME=/tmp
+
   nginx:
     image: nginx:alpine
     volumes:
       - ./config/nginx.conf:/etc/nginx/nginx.conf:ro
     ports:
-      - 80:80
+      - $SERVER_PORT:80
 
   nodejs:
     image: node:alpine
     volumes:
-      - ./:/app
-    working_dir: /app    
+      - $PWD:/app
+    working_dir: /app
     environment:
       PORT: 3000
-      IP: 0.0.0.0
+      HOST: 0.0.0.0
       MONGO_HOST: mongodb
-    command: sh -c 'npm i && node ./src/index.js'
+    command: node ./src/index.js
 
   mongodb:
     image: mongo
