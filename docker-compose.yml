@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  nginx:
+    image: nginx:alpine
+    volumes:
+      - ./config/nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 80:80
+
+  nodejs:
+    image: node:alpine
+    volumes:
+      - ./:/app
+    environment:
+      PORT: 3000
+      IP: 0.0.0.0
+      MONGO_HOST: mongodb
+    command: node /app/src/index
+
+  mongodb:
+    image: mongo
+    restart: always
