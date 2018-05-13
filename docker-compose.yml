@@ -32,7 +32,7 @@ services:
       PORT: 3000
       HOST: 0.0.0.0
       MONGO_HOST: mongodb
-    command: node ./src/index.js
+    command: npm start
 
   mongodb:
     image: mongo
