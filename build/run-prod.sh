@@ -2,7 +2,7 @@
 
 set -ex
 
-export USER_ID=$(id -u)
+export USER_ID=0
 export SERVER_PORT=80
 
 

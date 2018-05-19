@@ -1,7 +1,8 @@
 module.exports = {
   server: {
     port: process.env.PORT || '3000',
-    host: process.env.HOST || 'localhost'
+    host: process.env.HOST || 'localhost',
+    routes: { cors: true }
   },
   mongo: {
     promises: 'native',
